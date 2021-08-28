@@ -1,0 +1,26 @@
+{
+  "name": "nasa",
+  "version": "1.0.0",
+  "description": "This project was built by attending the online course [Complete Node.js Developer in 2021: Zero to Mastery](https://academy.zerotomastery.io/p/learn-node-js) by Andrei Neagoie and Adam Odziemkowski.",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "install": "npm run install-server && npm run install-client",
+    "server": "npm run watch --prefix server",
+    "client": "npm start --prefix client",
+    "watch": "npm run server & npm run client",
+    "test": "npm run test --prefix server && npm run test --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jascha-Biederstedt/nasa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jascha-Biederstedt/nasa/issues"
+  },
+  "homepage": "https://github.com/Jascha-Biederstedt/nasa#readme"
+}
