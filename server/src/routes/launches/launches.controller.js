@@ -9,7 +9,7 @@ const httpGetAllLaunches = async (req, res) => {
   return res.status(200).json(await getAllLaunches());
 };
 
-const httpAddNewLaunch = (req, res) => {
+const httpAddNewLaunch = async (req, res) => {
   const launch = req.body;
 
   if (
@@ -27,7 +27,7 @@ const httpAddNewLaunch = (req, res) => {
     return res.status(400).json({ error: 'Invalid launch date' });
   }
 
-  addNewLaunch(launch);
+  await addNewLaunch(launch);
 
   return res.status(201).json(launch);
 };
