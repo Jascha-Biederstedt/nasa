@@ -18,11 +18,20 @@ const launch = {
 };
 
 const loadLaunchesData = async () => {
-  console.log('...Download');
+  const firstLaunch = await findLaunch({
+    flightNumber: 1,
+    rocket: 'Falcon 1',
+    mission: 'FalconSat',
+  });
+
+  if (firstLaunch) {
+    return;
+  }
 
   const response = await axios.post(SPACEX_API_URL, {
     query: {},
     options: {
+      pagination: false,
       populate: [
         {
           path: 'rocket',
@@ -60,8 +69,12 @@ const loadLaunchesData = async () => {
   }
 };
 
+const findLaunch = async filter => {
+  return await launches.findOne(filter);
+};
+
 const existsLaunchWithId = async launchId => {
-  return await launches.findOne({
+  return await findLaunch({
     flightNumber: launchId,
   });
 };
