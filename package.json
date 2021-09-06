@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/Jascha-Biederstedt/nasa/issues"
   },
-  "homepage": "https://github.com/Jascha-Biederstedt/nasa#readme"
+  "homepage": "https://github.com/Jascha-Biederstedt/nasa#readme",
+  "dependencies": {
+    "axios": "^0.21.3"
+  }
 }
